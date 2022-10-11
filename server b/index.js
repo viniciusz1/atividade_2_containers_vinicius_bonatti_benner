@@ -31,7 +31,7 @@ app.get('/buscar_produtos', (req, res) => {
 
 app.post('/cadastrarProduto', async (req, res) => {
     let response = false
-    const url = `http://localhost:3000/resgatar_usuario/${req.body.user}/${req.body.password}`;
+    const url = `http://destino:3000/resgatar_usuario/${req.body.user}/${req.body.password}`;
     // let result = nodeFetch(url)
     // console.log(result)
     // res.json(result)
@@ -54,3 +54,6 @@ app.post('/cadastrarProduto', async (req, res) => {
 
 
 // docker network ls
+// docker network create --driver bridge my-network
+// docker run -d -p 8080:3000 --name destino --network my-network
+// docker run -d -p 8081:3001 --name origem --network my-network
